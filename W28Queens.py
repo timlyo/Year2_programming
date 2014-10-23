@@ -23,11 +23,6 @@ class Week2:
 					line += "   |"
 			print(line)
 
-			# for row in b:
-			# print(divider)
-			# print("|" + "|".join({True: " X ", False: "   "}[i] for i in row) + "|")
-			# print(divider)
-
 	def setAppend(self, s, i):
 		""" Add i to s unless i is already in s """
 		if not i in s:
@@ -63,7 +58,7 @@ class Week2:
 			for r in [-1, 1]:
 				for c in [-1, 1]:
 					self.appendIfInBounds(inView, self.pointShift(pos, r * i, c * i), size)
-					# Take out position of queen so she doesn't see herself...
+				# Take out position of queen so she doesn't see herself...
 		if pos in inView:
 			inView.remove(pos)
 		else:

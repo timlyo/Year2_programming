@@ -9,10 +9,8 @@ class Week4:
 		while not solved:
 			if Week4.getComplexity(m1, counter, k1) > Week4.getComplexity(m2, counter, k2):
 				counter += 1
-				# print(counter)
 			elif Week4.getComplexity(m1, counter, k1) < Week4.getComplexity(m2, counter, k2):
 				counter -= 1
-				# print(counter)
 			else:
 				print("Value:", counter)
 				solved = True
