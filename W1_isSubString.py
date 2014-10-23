@@ -1,5 +1,14 @@
-"""insert meaningful description here"""
+"""Pseudocode
+	for i in string1
+		if (string1[i] == string2[0])
+			for j string2
+				if (string1[iPos + jPos] != string2[j])
+					break
+			else
+				return True
+	return False
 
+"""
 
 class Week1:
 	@staticmethod
