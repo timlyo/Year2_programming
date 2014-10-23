@@ -1,7 +1,7 @@
-from W1isSubString import Week1
-from W28Queens import Week2
-from W4Complexity import Week4
-from W3subleq import SubleqProcessor
+from W1_isSubString import Week1
+from W2_8Queens import Week2
+from W4_Complexity import Week4
+from W3_subleq import SubleqProcessor
 
 
 def main():
