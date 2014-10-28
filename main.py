@@ -1,11 +1,12 @@
 from W1_isSubString import Week1
 from W2_8Queens import Week2
-from W4_Complexity import Week4
 from W3_subleq import SubleqProcessor
+from W4_Complexity import Week4
+from W5_searching import Searching
 
 
 def main():
-	weeks = [1, 2, 3, 4]
+	weeks = [5]
 
 	if 1 in weeks:
 		print("\n***Week 1 - isSubString***")
@@ -32,14 +33,17 @@ def main():
 		             "100 -1 -2 " \
 		             "33 -1 -2 " \
 		             "13 -1 -2 " \
+		             "10 -1 -2 " \
 		             "100 100 -1"
 		processor = SubleqProcessor(helloWorld)
 
 	if 4 in weeks:
 		print("\n***Week 4 - Complexity***")
-		# m  m  k  k
+						#m1 m2 k1 k2
 		Week4.complexity(2, 4, 4, 2)
 
+	if 5 in weeks:
+		print(Searching.divideSearch((1, 2, 3, 4, 5, 6, 7), (1, 3)))
 
 if __name__ == "__main__":
 	main()
