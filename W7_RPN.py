@@ -21,4 +21,5 @@ class Week7:
 				elif item == "/":
 					stack.append(op1 / op2)
 
-		print(stack)
+		print(str(input).replace("[", "").replace("]", "").replace(",", "").replace("'", "") + "=")
+		print(str(stack).replace("[", "").replace("]", ""))
