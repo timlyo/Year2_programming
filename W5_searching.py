@@ -26,7 +26,7 @@ n			return True
 		return False
 	"""
 
-class Searching:
+class Week5:
 	@staticmethod
 	def linearSearch(array, range):
 		for item in array:
@@ -40,6 +40,6 @@ class Searching:
 		if range[0] < midvalue < range[1]:
 			return True
 		if range[0] < midvalue:
-			return Searching.divideSearch(array[:len(array)//2], range)
+			return Week5.divideSearch(array[:len(array)//2], range)
 		if range[1] > midvalue:
-			return Searching.divideSearch(array[len(array)//2:], range)
+			return Week5.divideSearch(array[len(array)//2:], range)
