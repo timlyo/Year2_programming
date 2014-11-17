@@ -2,7 +2,11 @@ import random
 
 
 class Week2:
+	def __init__(self):
+		self.size = 0
+
 	def makeBoard(self, size):
+		self.size = size
 		board = []
 		for i in range(size):
 			board.append([])
@@ -22,6 +26,13 @@ class Week2:
 				else:
 					line += "   |"
 			print(line)
+
+	def validatedSetAppend(self, set, newPos):
+		if not 0 < newPos[0] < self.size:
+			return
+		if not 0 < newPos[1] < self.size:
+			return
+		self.setAppend(set, newPos)
 
 	def setAppend(self, s, i):
 		""" Add i to s unless i is already in s """
@@ -65,6 +76,44 @@ class Week2:
 			raise Exception("This should never happen")
 		return inView
 
+	def rookSees(self, pos, size):
+		""" Return a list of all squares "In view" of a rook in position pos on a board of size"""
+		inView = []
+		# Row and column
+		for i in range(size):
+			# Column
+			self.setAppend(inView, (i, pos[1]))
+			# Row
+			self.setAppend(inView, (pos[0], i))
+		#remove self
+		if pos in inView:
+			inView.remove(pos)
+		else:
+			raise Exception("This should never happen")
+		return inView
+
+	def knightSees(self, pos, size):
+		""" Return a list of all squares "In view" of a rook in position pos on a board of size"""
+		inView = []
+		self.setAppend(inView, pos)
+
+		self.validatedSetAppend(inView, (pos[0] + 1, pos[1] + 2))
+		self.validatedSetAppend(inView, (pos[0] + 2, pos[1] + 1))
+		self.validatedSetAppend(inView, (pos[0] - 1, pos[1] + 2))
+		self.validatedSetAppend(inView, (pos[0] - 2, pos[1] + 1))
+		self.validatedSetAppend(inView, (pos[0] - 1, pos[1] - 1))
+		self.validatedSetAppend(inView, (pos[0] - 2, pos[1] - 2))
+		self.validatedSetAppend(inView, (pos[0] + 1, pos[1] - 2))
+		self.validatedSetAppend(inView, (pos[0] + 2, pos[1] - 1))
+
+		#remove self
+		if pos in inView:
+			inView.remove(pos)
+		else:
+			raise Exception("This should never happen")
+		return inView
+
+
 	def hasQueen(self, board, points):
 		""" Returns True if any of the given points on the given board contain a queen """
 		for p in points:
@@ -86,7 +135,7 @@ class Week2:
 			return board
 		else:
 			for col in range(size):
-				if not self.hasQueen(board, self.queenSees((row, col), size)):
+				if not self.hasQueen(board, self.knightSees((row, col), size)):
 					b = self.cloneBoard(board, size)
 					b[row][col] = True
 					result = self.fillBoardRecursion(b, row + 1, size)
@@ -99,14 +148,12 @@ class Week2:
 		result = self.fillBoardRecursion(b, 0, size)
 		return result
 
-
 	def fillBoardRandomStart(self, size):
 		b = self.makeBoard(size)
 		p = random.randint(0, 7)
 		b[0][p] = True
 		result = fillBoardRecursion(b, 1, size)
 		return result
-
 
 	def fillBoardNaive(self, size):
 		b = self.makeBoard(size)
@@ -124,10 +171,3 @@ if __name__ == '__main__':
 	week2 = Week2()
 	board = week2.fillBoard(8)
 	week2.displayBoard(board)
-
-
-# Advanced
-# Can we prove all board sizes have a solution?`
-# Can we speed up the solution?
-# Perhaps using masks that exclude options...
-

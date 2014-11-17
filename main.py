@@ -10,7 +10,7 @@ import random
 
 
 def main():
-	weeks = [7]
+	weeks = [2]
 
 	if 1 in weeks:
 		print("\n***Week 1 - isSubString***")
