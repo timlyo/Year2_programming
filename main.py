@@ -5,12 +5,13 @@ from W4_Complexity import Week4
 from W5_searching import Week5
 from W6_sorting import Week6
 from W7_RPN import Week7
-
-import random
+from W8_LinkList import Week8
+from W12_Tree import *
 
 
 def main():
-	weeks = [2]
+	weeks = [8]
+	#weeks = range(9)
 
 	if 1 in weeks:
 		print("\n***Week 1 - isSubString***")
@@ -67,6 +68,17 @@ def main():
 		print("\n***Week 7 - RPN***")
 
 		Week7.caluclate("3 1 2 + * ")
+
+	if 8 in weeks:
+		print("\n***Week 8 - Link List***")
+
+		week8 = Week8()
+
+	if 12 in weeks:
+		print("\n***Week 12 - Tree***")
+
+		test()
+
 
 if __name__ == "__main__":
 	main()
