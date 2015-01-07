@@ -10,7 +10,7 @@ from W12_Tree import *
 
 
 def main():
-	weeks = [8]
+	weeks = [4]
 	#weeks = range(9)
 
 	if 1 in weeks:
@@ -45,7 +45,7 @@ def main():
 	if 4 in weeks:
 		print("\n***Week 4 - Complexity***")
 						#m1 m2 k1 k2
-		Week4.complexity(2, 4, 4, 2)
+		Week4.complexity(2, 20, 100, 2)
 
 	if 5 in weeks:
 		print("\n***Week 5 - Searching***")
