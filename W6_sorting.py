@@ -1,5 +1,6 @@
 import random
 
+
 class Week6:
 	@staticmethod
 	def generateArray(type):
@@ -7,20 +8,18 @@ class Week6:
 
 		# random data
 		if type == "random":
-			print("Random case")
 			for num in range(512):
 				array.append(random.randint(0, 100))
 
 		#worst case
 		if type == "worst":
-			print("Worst case ")
 			for num in range(512):
 				array.append(num)
 
 		return array
 
 	@staticmethod
-	def quicksort(array, count, pivotPlace):
+	def quicksort(array, count=[0], pivotPlace="random"):
 		if len(array) <= 1:
 			return array
 

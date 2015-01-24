@@ -10,7 +10,7 @@ from W12_Tree import *
 
 
 def main():
-	weeks = [4]
+	weeks = [3]
 	#weeks = range(9)
 
 	if 1 in weeks:
@@ -47,6 +47,8 @@ def main():
 						#m1 m2 k1 k2
 		Week4.complexity(2, 20, 100, 2)
 
+		print(Week4.efficientDupeFinder((1, 3, 7, 2, 1)))
+
 	if 5 in weeks:
 		print("\n***Week 5 - Searching***")
 		print(Week5.divideSearch((1, 2, 3, 4, 5, 6, 7), (1, 3)))
@@ -54,20 +56,19 @@ def main():
 	if 6 in weeks:
 		print("\n***Week 6 - Sorting***")
 
-		array = Week6.generateArray("worst")  # random, worst
-
 		count = [0]
-		runCount = 500
+		runCount = 1000
 
 		for x in range(runCount):
-			Week6.quicksort(array, count, "random")  # random, front, middle
+			array = Week6.generateArray("random")  # random, worst
+			Week6.quicksort(array, count, "middle")  # random, front, middle
 
-		print("Average steps = " + str(count[0]/runCount) + " over {0} steps".format(runCount))
+		print("Average steps = " + str(count[0]/runCount) + " over {0} times".format(runCount))
 
 	if 7 in weeks:
 		print("\n***Week 7 - RPN***")
 
-		Week7.caluclate("3 1 2 + * ")
+		Week7.calculate("3 1 2 + * ")
 
 	if 8 in weeks:
 		print("\n***Week 8 - Link List***")
@@ -78,6 +79,22 @@ def main():
 		print("\n***Week 12 - Tree***")
 
 		test()
+
+	if 14 in weeks:
+		print("\n***Week 14 - AVL Tree***")
+		a = AVLNode(50)
+		a = a.insert_full(AVLNode(25))
+		a = a.insert_full(AVLNode(10))
+		a = a.insert_full(AVLNode(30))
+		a = a.insert_full(AVLNode(45))
+		a = a.insert_full(AVLNode(75))
+		a = a.insert_full(AVLNode(65))
+		a = a.insert_full(AVLNode(100))
+		a = a.insert_full(AVLNode(120))
+		a = a.insert_full(AVLNode(125))
+		a = a.insert_full(AVLNode(130))
+		a = a.insert_full(AVLNode(140))
+		a.dot()
 
 
 if __name__ == "__main__":

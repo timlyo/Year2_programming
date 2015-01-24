@@ -2,7 +2,7 @@
 
 class Week7:
 	@staticmethod
-	def caluclate(input):
+	def calculate(input):
 		input = str(input).split(" ")
 		stack = []
 		for item in input:
