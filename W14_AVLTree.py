@@ -76,6 +76,11 @@ class AVLNode(object):
 
 		return root
 
+	def erase(self):
+		#TODO self
+		pass
+
+
 	def dot(self, top=True):
 
 		if top:

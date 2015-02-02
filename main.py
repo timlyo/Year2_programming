@@ -7,11 +7,13 @@ from W6_sorting import Week6
 from W7_RPN import Week7
 from W8_LinkList import Week8
 from W12_Tree import *
+from W14_AVLTree import AVLNode
+from W15_Graphs import Graph
 
 
 def main():
-	weeks = [3]
-	#weeks = range(9)
+	weeks = [15]
+	#weeks = range(14)
 
 	if 1 in weeks:
 		print("\n***Week 1 - isSubString***")
@@ -95,6 +97,16 @@ def main():
 		a = a.insert_full(AVLNode(130))
 		a = a.insert_full(AVLNode(140))
 		a.dot()
+
+	if 15 in weeks:
+		graph = Graph()
+		graph.addNode(5)
+		graph.addNode(3)
+		graph.addNode(1)
+		graph.addEdge(graph.getNode(0), graph.getNode(2))
+		graph.addEdge(graph.getNode(0), graph.getNode(1))
+		graph.addEdge(graph.getNode(1), graph.getNode(0))
+		print(graph)
 
 
 if __name__ == "__main__":
