@@ -9,10 +9,11 @@ from W8_LinkList import Week8
 from W12_Tree import *
 from W14_AVLTree import AVLNode
 from W15_Graphs import Graph
+from W17_lambdaFunctor import *
 
 
 def main():
-	weeks = [15]
+	weeks = [17]
 	#weeks = range(14)
 
 	if 1 in weeks:
@@ -96,9 +97,13 @@ def main():
 		a = a.insert_full(AVLNode(125))
 		a = a.insert_full(AVLNode(130))
 		a = a.insert_full(AVLNode(140))
+
+		a.deleteFull(75)
 		a.dot()
 
 	if 15 in weeks:
+		print("\n***Week 15 - Graphs***")
+
 		graph = Graph()
 		graph.addNode(5)
 		graph.addNode(3)
@@ -107,6 +112,16 @@ def main():
 		graph.addEdge(graph.getNode(0), graph.getNode(1))
 		graph.addEdge(graph.getNode(1), graph.getNode(0))
 		print(graph)
+
+	if 17 in weeks:
+		print("\n***Week 17 - lambda functor***")
+
+		numberThing = NumberThing(50)
+		numberThing.draw()
+		print("==================")
+		numberThing.modify(lambda x: x / 2)
+		numberThing.draw()
+
 
 
 if __name__ == "__main__":

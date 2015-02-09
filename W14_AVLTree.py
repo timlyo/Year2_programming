@@ -76,9 +76,26 @@ class AVLNode(object):
 
 		return root
 
-	def erase(self):
-		#TODO self
-		pass
+	def deleteFull(self, number):
+		node = self
+		previous = None
+		left = None #if this node is the left of previous
+		while node.data != number:
+			if number > node.data:
+				previous = node
+				node = node.right
+				left = False
+			else:
+				previous = node
+				node = node.left
+				left = True
+			if node is None:
+				return
+		if node.left is None and node.right is None:
+			if left:
+				previous.left = None
+			else:
+				previous.right = None
 
 
 	def dot(self, top=True):
